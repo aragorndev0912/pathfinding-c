@@ -27,7 +27,7 @@ void map_print(const uMap_t *map) {
     for (uint16_t i = 0; i < size; ++i) {
       printf("%c ", (*vec));
       if (i > 0 && (i+1) % map->width == 0) printf("\n");
-      ++vec;      
+      ++vec;
     }
   }
   printf("\n");
@@ -35,20 +35,20 @@ void map_print(const uMap_t *map) {
 
 void map_state_0(uMap_t *map) {
   // begin
-  map->b_x = 1; 
+  map->b_x = 1;
   map->b_y = 2;
   // end
-  map->e_x = 5; 
+  map->e_x = 5;
   map->e_y = 2;
 
   map->vector[(2 * map->width) + 1] = BEGIN;
   map->vector[(2 * map->width) + 5] = END;
 
   map->vector[(0 * map->width) + 3] = WALL;
-  // map->vector[(1 * map->width) + 3] = WALL;
-  // map->vector[(2 * map->width) + 3] = WALL;
+  map->vector[(1 * map->width) + 3] = WALL;
+  map->vector[(2 * map->width) + 3] = WALL;
   map->vector[(3 * map->width) + 3] = WALL;
-  map->vector[(4 * map->width) + 3] = WALL;
+  // map->vector[(4 * map->width) + 3] = WALL;
 }
 
 uNode_t *map_path(uMap_t *map) {
